@@ -6,7 +6,7 @@
 /*   By: cmasse <cmasse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 18:30:38 by cmasse            #+#    #+#             */
-/*   Updated: 2020/11/24 18:32:23 by cmasse           ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 14:43:35 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (n1[i] != n2[i] || n1[i] == '\0')
+		if (n1[i] != n2[i])
 			return (n1[i] - n2[i]);
 		i++;
 	}

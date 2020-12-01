@@ -6,7 +6,7 @@
 /*   By: cmasse <cmasse@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 15:16:44 by cmasse            #+#    #+#             */
-/*   Updated: 2020/12/01 11:58:09 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 16:38:38 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static char		**ft_nb_ligne(char const *s, char c)
 		count = 1;
 	while (s[i])
 	{
-		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0' && s[i])
+		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
 			count++;
 		i++;
 	}
@@ -39,6 +39,8 @@ static char		**ft_words(char **str, char const *s, char c)
 	i = 0;
 	y = 0;
 	x = 0;
+	if (!str)
+		return (0);
 	while (s[i])
 	{
 		while (s[i] != c && s[i])
@@ -65,7 +67,10 @@ char			**ft_split(char const *s, char c)
 	i = 0;
 	y = 0;
 	x = 0;
-	str = ft_words(ft_nb_ligne(s, c), s, c);
+	if (!s)
+		return (0);
+	if (!(str = ft_words(ft_nb_ligne(s, c), s, c)))
+		return (0);
 	while (s[i])
 	{
 		while (s[i] == c && s[i])

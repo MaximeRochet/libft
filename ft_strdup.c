@@ -6,7 +6,7 @@
 /*   By: cmasse <cmasse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 17:22:01 by cmasse            #+#    #+#             */
-/*   Updated: 2020/11/24 18:30:19 by cmasse           ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 15:05:57 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strdup(const char *src)
 	size = 0;
 	while (src[size] != '\0')
 		size++;
-	c = malloc(sizeof(char *) * (size + 1));
+	c = malloc(sizeof(char) * (size + 1));
 	if (c == NULL)
 		return (0);
 	while (src[i])

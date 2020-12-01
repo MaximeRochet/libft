@@ -6,7 +6,7 @@
 /*   By: cmasse <cmasse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:05:05 by cmasse            #+#    #+#             */
-/*   Updated: 2020/12/01 11:18:55 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 16:42:50 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t		i;
-	char		*n_dst;
-	char		*n_src;
+	size_t				i;
+	unsigned char		*n_dst;
+	unsigned char		*n_src;
 
-	n_dst = (char *)dst;
-	n_src = (char *)src;
+	n_dst = (unsigned char *)dst;
+	n_src = (unsigned char *)src;
 	i = 0;
+	if (n_dst == 0 && n_src == 0)
+		return (0);
 	if (dst > src)
 	{
 		while (len > 0)
@@ -30,12 +32,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 	}
 	else
-	{
 		while (i < len)
 		{
 			n_dst[i] = n_src[i];
 			i++;
 		}
-	}
 	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 14:04:08 by mrochet           #+#    #+#             */
-/*   Updated: 2020/12/01 11:28:57 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 16:20:07 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_itoa(int n)
 
 	tmp = n;
 	size = len_num(n);
-	if (!(ret = malloc(sizeof(char) * size)))
+	if (!(ret = malloc(sizeof(char) * size + 1)))
 		return (0);
 	ret[0] = '0';
 	if (n < 0)

@@ -6,7 +6,7 @@
 /*   By: cmasse <cmasse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 17:42:35 by cmasse            #+#    #+#             */
-/*   Updated: 2020/12/01 11:22:13 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 16:37:53 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t i;
 
 	i = 0;
+	if (src == 0)
+		return (0);
 	if (dstsize == 0)
 		return (ft_strlen(src));
 	while (src[i] && i < dstsize - 1)

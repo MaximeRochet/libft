@@ -6,7 +6,7 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 13:17:16 by mrochet           #+#    #+#             */
-/*   Updated: 2020/12/01 12:02:05 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 16:39:33 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,26 +30,24 @@ char		*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		len;
-	char	*ret;
 	int		a;
+	char	*ret;
 
 	i = 0;
 	a = 0;
+	if (!s1)
+		return (0);
 	len = ft_strlen(s1) - 1;
 	while (ft_is_in(s1[i], set) == 1 && s1[i])
 		i++;
-	while (ft_is_in(s1[len], set) == 1)
+	while (ft_is_in(s1[len], set) == 1 && len > 0)
 		len--;
-	if (len < 0)
-		return (ft_calloc(1, 1));
-	if (!(ret = malloc(sizeof(char *) * ((len - i) + 1))))
+	if (len <= 0)
+		return (ft_calloc(sizeof(char), 1));
+	if (!(ret = malloc(sizeof(char) * (len - i + 2))))
 		return (0);
 	while (i <= len)
-	{
-		ret[a] = s1[i];
-		i++;
-		a++;
-	}
+		ret[a++] = s1[i++];
 	ret[a] = '\0';
 	return (ret);
 }

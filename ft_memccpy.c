@@ -6,7 +6,7 @@
 /*   By: cmasse <cmasse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:20:28 by cmasse            #+#    #+#             */
-/*   Updated: 2020/12/01 11:12:35 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 12:50:24 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	while (n-- > 0)
 	{
 		*n_dst = *n_src;
-		if (*n_src == c)
+		if (*n_src == (unsigned char)c)
 			return (n_dst + 1);
 		n_dst++;
 		n_src++;

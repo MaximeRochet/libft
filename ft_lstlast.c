@@ -6,7 +6,7 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 16:34:13 by mrochet           #+#    #+#             */
-/*   Updated: 2020/12/01 12:02:39 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 16:25:26 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
+	if (!lst)
+		return (NULL);
 	while (lst->next)
 	{
 		lst = lst->next;
