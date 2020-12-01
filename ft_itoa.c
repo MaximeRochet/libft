@@ -6,25 +6,25 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 14:04:08 by mrochet           #+#    #+#             */
-/*   Updated: 2020/11/27 15:25:29 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 11:28:57 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int len_num(int n)
+int		len_num(int n)
 {
-	int len;
-	long int tmp;
+	int			len;
+	long int	tmp;
 
 	tmp = n;
 	len = 1;
 	if (tmp < 0)
-	{	
+	{
 		len++;
 		tmp *= -1;
 	}
-	while(tmp >= 10)
+	while (tmp >= 10)
 	{
 		tmp /= 10;
 		len++;
@@ -32,22 +32,22 @@ int len_num(int n)
 	return (len);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char *ret;
-	int size;
-	int i;
-	long int tmp;
-	
+	char		*ret;
+	int			size;
+	int			i;
+	long int	tmp;
+
 	tmp = n;
 	size = len_num(n);
-	if(!(ret = malloc(sizeof(char)*size)))
-		return(0);
+	if (!(ret = malloc(sizeof(char) * size)))
+		return (0);
 	ret[0] = '0';
 	if (n < 0)
 	{
 		ret[0] = '-';
-		tmp *= -1; 
+		tmp *= -1;
 	}
 	ret[size] = '\0';
 	i = size - 1;
@@ -59,9 +59,3 @@ char *ft_itoa(int n)
 	}
 	return (ret);
 }
-
-/*int main(int ac, char **av)
-{	
-		printf("itoa = %s\n", ft_itoa(atoi(av[1])));
-}*/
-	

@@ -6,21 +6,23 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 18:25:26 by mrochet           #+#    #+#             */
-/*   Updated: 2020/11/28 19:06:43 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 11:15:08 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *temp;
+	t_list *tmp;
 
-	while(*lst)
+	if (lst)
 	{
-		temp = (*lst)->next;
-		(*del)((*lst)->content);
-		free(lst);
-		(*lst) = temp;
+		while (*lst)
+		{
+			tmp = (*lst)->next;
+			ft_lstdelone(*lst, del);
+			(*lst) = tmp;
+		}
 	}
 }

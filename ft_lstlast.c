@@ -6,17 +6,17 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 16:34:13 by mrochet           #+#    #+#             */
-/*   Updated: 2020/11/28 16:38:20 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 12:02:39 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	while (lst->next)
 	{
 		lst = lst->next;
 	}
-	return(lst);
+	return (lst);
 }

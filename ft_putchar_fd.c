@@ -6,14 +6,13 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 12:18:03 by mrochet           #+#    #+#             */
-/*   Updated: 2020/11/27 12:19:43 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 11:51:06 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

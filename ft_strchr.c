@@ -6,7 +6,7 @@
 /*   By: cmasse <cmasse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 11:46:14 by cmasse            #+#    #+#             */
-/*   Updated: 2020/11/25 17:10:59 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 11:21:12 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 char	*ft_strchr(const char *s, int c)
 {
 	int		i;
-	char *s_temp;
+	char	*s_temp;
 
 	i = 0;
 	s_temp = (char *)s;
-	if(!c)
-		return(s_temp + ft_strlen(s));
+	if (!c)
+		return (s_temp + ft_strlen(s));
 	while (s[i])
 	{
 		if (s[i] == c)

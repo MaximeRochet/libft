@@ -6,7 +6,7 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 12:35:42 by mrochet           #+#    #+#             */
-/*   Updated: 2020/11/27 12:38:59 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 11:53:25 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	write(fd, s,ft_strlen(s));
+	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }
-
