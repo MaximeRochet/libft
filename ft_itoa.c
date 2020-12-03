@@ -6,56 +6,36 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 14:04:08 by mrochet           #+#    #+#             */
-/*   Updated: 2020/12/01 16:20:07 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2020/12/03 12:38:13 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		len_num(int n)
+short		len_num(unsigned int n, short len)
 {
-	int			len;
-	long int	tmp;
-
-	tmp = n;
-	len = 1;
-	if (tmp < 0)
-	{
+	while ((n /= 10))
 		len++;
-		tmp *= -1;
-	}
-	while (tmp >= 10)
-	{
-		tmp /= 10;
-		len++;
-	}
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
-	char		*ret;
-	int			size;
-	int			i;
-	long int	tmp;
+	char			*ret;
+	short			size;
+	unsigned int	nb;
 
-	tmp = n;
-	size = len_num(n);
+	nb = n < 0 ? -n : n;
+	size = len_num(nb, (n < 0 ? 2 : 1));
 	if (!(ret = malloc(sizeof(char) * size + 1)))
-		return (0);
-	ret[0] = '0';
-	if (n < 0)
-	{
-		ret[0] = '-';
-		tmp *= -1;
-	}
+		return (NULL);
+	ret[0] = n < 0 ? '-' : '0';
 	ret[size] = '\0';
-	i = size - 1;
-	while (tmp > 0)
+	while (nb > 0)
 	{
-		ret[i] = (tmp % 10) + 48;
-		tmp /= 10;
-		i--;
+		size--;
+		ret[size] = (nb % 10) + 48;
+		nb /= 10;
 	}
 	return (ret);
 }

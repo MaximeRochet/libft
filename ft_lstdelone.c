@@ -6,7 +6,7 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 17:17:38 by mrochet           #+#    #+#             */
-/*   Updated: 2020/11/28 18:13:11 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2020/12/03 17:44:43 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	(*del)(lst->content);
-	free(lst);
+	if (lst)
+	{
+		(*del)(lst->content);
+		free(lst);
+	}
 }
