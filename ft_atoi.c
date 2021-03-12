@@ -6,17 +6,17 @@
 /*   By: cmasse <cmasse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 17:02:14 by cmasse            #+#    #+#             */
-/*   Updated: 2020/12/03 12:43:23 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 11:49:01 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int i;
-	int sign;
-	int nb;
+	int	i;
+	int	sign;
+	int	nb;
 
 	sign = 1;
 	nb = 0;

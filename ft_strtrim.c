@@ -6,7 +6,7 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 13:17:16 by mrochet           #+#    #+#             */
-/*   Updated: 2020/12/01 16:39:33 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 13:32:23 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_is_in(char c, char const *set)
 	return (0);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		len;
@@ -44,7 +44,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 		len--;
 	if (len <= 0)
 		return (ft_calloc(sizeof(char), 1));
-	if (!(ret = malloc(sizeof(char) * (len - i + 2))))
+	ret = malloc(sizeof(char) * (len - i + 2));
+	if (!ret)
 		return (0);
 	while (i <= len)
 		ret[a++] = s1[i++];

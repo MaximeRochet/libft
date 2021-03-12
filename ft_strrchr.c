@@ -6,7 +6,7 @@
 /*   By: cmasse <cmasse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 12:40:22 by cmasse            #+#    #+#             */
-/*   Updated: 2020/12/01 11:24:36 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 13:31:13 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t i;
+	size_t	i;
 
 	i = ft_strlen(s);
 	if (!c)

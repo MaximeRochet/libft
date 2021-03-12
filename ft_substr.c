@@ -6,7 +6,7 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:21:19 by mrochet           #+#    #+#             */
-/*   Updated: 2020/12/01 16:38:22 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 13:33:16 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		size = ft_strlen(s) - start;
 	else
 		size = len;
-	if (!(ret = (char *)malloc(sizeof(char) * (size + 1))))
+	ret = (char *)malloc(sizeof(char) * (size + 1));
+	if (!ret)
 		return (0);
 	while (s[start] && i < size)
 	{

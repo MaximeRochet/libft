@@ -6,7 +6,7 @@
 /*   By: cmasse <cmasse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 17:25:50 by cmasse            #+#    #+#             */
-/*   Updated: 2020/12/01 12:13:27 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 13:38:41 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <string.h>
 # include <stdlib.h>
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -42,8 +42,8 @@ char				*ft_strchr(const char *s, int c);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
-char				*ft_strnstr(const char *haystack, const char *needle,\
-		size_t len);
+char				*ft_strnstr(const char *haystack, const char *needle, \
+size_t len);
 int					ft_atoi(const char *str);
 void				*ft_calloc(size_t count, size_t size);
 char				*ft_strdup(const char *src);
@@ -66,7 +66,7 @@ void				ft_lstadd_back(t_list **alst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),\
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), \
 void (*del)(void *));
 
 #endif

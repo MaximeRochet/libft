@@ -6,30 +6,54 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 14:04:08 by mrochet           #+#    #+#             */
-/*   Updated: 2020/12/03 12:38:13 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 14:16:34 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-short		len_num(unsigned int n, short len)
+int	len_num(int n)
 {
-	while ((n /= 10))
+	int	len;
+
+	if (n == 0)
+		return (2);
+	if (n < 0)
+		len = 1;
+	else
+		len = 0;
+	while (n)
+	{
 		len++;
+		n /= 10;
+	}
 	return (len);
 }
 
-char		*ft_itoa(int n)
+unsigned int	ft_absolute(int n)
+{
+	if (n == -0)
+		n = 0;
+	if (n <= 0)
+		n *= -1;
+	return (n);
+}
+
+char	*ft_itoa(int n)
 {
 	char			*ret;
 	short			size;
 	unsigned int	nb;
 
-	nb = n < 0 ? -n : n;
-	size = len_num(nb, (n < 0 ? 2 : 1));
-	if (!(ret = malloc(sizeof(char) * size + 1)))
+	size = len_num(n);
+	nb = ft_absolute(n);
+	ret = malloc(sizeof(char) * size + 1);
+	if (!ret)
 		return (NULL);
-	ret[0] = n < 0 ? '-' : '0';
+	if (n < 0)
+		ret[0] = '-';
+	if (n == 0)
+		ret[0] = '0';
 	ret[size] = '\0';
 	while (nb > 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: cmasse <cmasse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 13:11:40 by cmasse            #+#    #+#             */
-/*   Updated: 2020/11/24 18:32:06 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 13:27:00 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static size_t	ft_strnlen(const char *str, size_t n)
 	return (i);
 }
 
-size_t			ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t		n;
 	size_t		size;

@@ -6,13 +6,13 @@
 /*   By: cmasse <cmasse@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 15:16:44 by cmasse            #+#    #+#             */
-/*   Updated: 2020/12/01 16:38:38 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 13:25:09 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		**ft_nb_ligne(char const *s, char c)
+static char	**ft_nb_ligne(char const *s, char c)
 {
 	int		i;
 	int		count;
@@ -30,7 +30,7 @@ static char		**ft_nb_ligne(char const *s, char c)
 	return ((char **)ft_calloc(sizeof(char *), count + 1));
 }
 
-static char		**ft_words(char **str, char const *s, char c)
+static char	**ft_words(char **str, char const *s, char c)
 {
 	int		i;
 	int		y;
@@ -57,7 +57,7 @@ static char		**ft_words(char **str, char const *s, char c)
 	return (str);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		y;
@@ -69,7 +69,8 @@ char			**ft_split(char const *s, char c)
 	x = 0;
 	if (!s)
 		return (0);
-	if (!(str = ft_words(ft_nb_ligne(s, c), s, c)))
+	str = ft_words(ft_nb_ligne(s, c), s, c);
+	if (!str)
 		return (0);
 	while (s[i])
 	{

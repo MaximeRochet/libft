@@ -6,7 +6,7 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 11:43:49 by mrochet           #+#    #+#             */
-/*   Updated: 2020/12/01 16:21:13 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 13:45:41 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (0);
 	i = 0;
 	size = ft_strlen(s);
-	if (!(str = (char *)malloc(sizeof(char) * size + 1)))
+	str = (char *)malloc(sizeof(char) * size + 1);
+	if (!str)
 		return (0);
 	while (s[i])
 	{
